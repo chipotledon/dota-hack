@@ -40,19 +40,19 @@ function Think()
 
     local angle = math.rad(math.fmod(npcBot:GetFacing()+30, 360)); -- Calculate next position's angle
     local newLocation = npcBot:GetLocation()
-    if state == "DEFEND_TOWER_BOT" then
+    if state == "DefendBottomTower" then
         newLocation = GetTowerLocation(TOWER_BOT_1)
         chat(npcBot, "I'm going to defend the bottom tower")
-    elseif state == "DEFEND_TOWER_TOP" then
+    elseif state == "DefendTopTower" then
         newLocation = GetTowerLocation(TOWER_TOP_1)
         chat(npcBot, "I'm going to defend the top tower")
-    elseif state == "DEFEND_TOWER_MID" then
+    elseif state == "DefendMidTower" then
         newLocation = GetTowerLocation(TOWER_MID_1)
         chat(npcBot, "I'm going to defend the middle tower")
-    elseif state == "DEFEND_ME" then
+    elseif state == "DefendMe" then
         newLocation = player:GetLocation()
-        chat(npcBot, "I'm going to come help you!")
-    elseif state == "FOUNTAIN" then
+        chat(npcBot, "I'm coming to help you, noob!")
+    elseif state == "RunAroundTheFountain" then
         newLocation = Vector(fountainLocation.x+fountainRadius*math.cos(angle), fountainLocation.y+fountainRadius*math.sin(angle), fountainLocation.z);
         chat(npcBot, "I'm going to run around the fountain")
     end

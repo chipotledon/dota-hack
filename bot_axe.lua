@@ -25,8 +25,8 @@ function updateState()
     local alexaDeaths = GetHeroDeaths(1);
     local alexaKills = GetHeroDeaths(1);
     local req = CreateRemoteHTTPRequest("localhost/cgi-bin/first.pl?");
-    req:SetHTTPRequestRawPostBody("application/json", "{'playerKills':" .. kills .. ", 'playerDeaths':" .. deaths ..
-        ", alexaKills':" .. alexaKills .. ", 'alexaDeaths':" .. alexaDeaths .. "}");
+    req:SetHTTPRequestRawPostBody("application/json", "{\"playerKills\":" .. kills .. ", \"playerDeaths\":" .. deaths ..
+        ", \"alexaKills\":" .. alexaKills .. ", \"alexaDeaths\":" .. alexaDeaths .. "}");
     req:Send( function( result )
         print( "POST response:\n" );
         print("+" .. result["Body"] .. "+");
